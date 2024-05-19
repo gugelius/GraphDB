@@ -218,18 +218,8 @@ FROM
 WHERE MATCH(SHORTEST_PATH(A1(-(Recommends)->A2){1,2}))
 	and A1.name = N'Лев Толстой';
 
-SELECT @@SERVERNAME
--- Сервер: GUGELIUSSS\SQLEXPRESS
--- База данных: Book
 
 
-SELECT A.name AS AuthorName,
-       B.title AS BookTitle,
-       CONCAT(N'Author', A.id) AS [First Image name],
-       CONCAT(N'', B.title) AS [Second Image name]
-FROM Author AS A
-JOIN Wrote AS W ON W.$from_id = A.$node_id
-JOIN Book AS B ON W.$to_id = B.$node_id;
 
 
 
